@@ -34,5 +34,49 @@ public class Numbers2D
     }
     average = (double)sum2/count;
     System.out.println(average);
+
+    //MIN
+    int min = 0;
+    for (int[] arr : numbers)
+    {
+      for (int v : arr)
+      {
+        if (min > v)
+        {
+          min = v;
+        }
+      }
+    }
+    System.out.println(min);
+
+    //MAX
+    int max = 0;
+    for (int[] arr : numbers)
+    {
+      for (int v : arr)
+      {
+        if (max < v)
+        {
+          max = v;
+        }
+      }
+    }
+    System.out.println(max);
+
+    //NEGATIVE
+    int negCount = 0;
+    for (int[] arr : numbers)
+    {
+      for (int v : arr)
+      {
+        if (v < 0)
+        {
+          negCount++;
+        }
+      }
+    }
+    System.out.println(negCount);
+
+    
   }
 }
