@@ -42,18 +42,49 @@ public class Names2D
     
     System.out.println("\nReverse the order of the elements in second column:");
     String temp = "";
-    for (int row1 = 0; row1 < names.length; row1++)
+    int count = 0;
+    temp = names[0][1];
+    names[0][1] = names[2][1];
+    names[2][1] = temp;
+    for (String[] arr : names)
     {
-      for (int row2 = names.length - 1; row2 > 0; row2--)
+      for (String n : arr)
       {
-        names[row2][1] = temp;
-        names[row2][1] = names[row1][1];
-        names[row1][1] = temp;
+        System.out.print(n + " ");
+        count++;
+        if (count % 4 == 0)
+        {
+          System.out.println();
+        }
       }
     }
     
+    
     System.out.println("\nShift an element in a row: Shift the first name in the first row left to the last name in the row:");
-   
+   for (int r = 0; r < names.length; r++)
+   {
+    for (int c = 0; c < names[0].length; c++)
+    {
+      String first = names[r][0];
+      while (c != names[0].length -1)
+      {
+        names[r][c] = names[r][c + 1];
+      }
+      names[r][(names[0].length - 1)] = first;
+    }
+   }
+   for (String[] arr : names)
+    {
+      for (String n : arr)
+      {
+        System.out.print(n + " ");
+        count++;
+        if (count % 4 == 0)
+        {
+          System.out.println();
+        }
+      }
+    }
    
     System.out.println("\nShift an element in a column: Shift the last name in the first row down to the last row:");
    
