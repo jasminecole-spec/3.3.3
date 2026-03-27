@@ -61,32 +61,33 @@ public class Names2D
     
     
     System.out.println("\nShift an element in a row: Shift the first name in the first row left to the last name in the row:");
-   for (int r = 0; r < names.length; r++)
-   {
-    for (int c = 0; c < names[0].length; c++)
-    {
-      String first = names[r][0];
-      while (c != names[0].length -1)
-      {
-        names[r][c] = names[r][c + 1];
+    String[] firstRow = names[0];
+    String temp2 = "";
+    temp2 = firstRow[0];
+    firstRow[0] = firstRow[firstRow.length-1];
+    firstRow[firstRow.length-1] = temp2;
+
+    for(String[] i: names){
+      for (String j: i){
+        System.out.print("\t"+ j);
+
       }
-      names[r][(names[0].length - 1)] = first;
-    }
-   }
-   for (String[] arr : names)
-    {
-      for (String n : arr)
-      {
-        System.out.print(n + " ");
-        count++;
-        if (count % 4 == 0)
-        {
-          System.out.println();
-        }
-      }
+      System.out.println("");
     }
    
     System.out.println("\nShift an element in a column: Shift the last name in the first row down to the last row:");
+     String[] firstRow2 = names[0];
+    temp = firstRow2[0];
+    firstRow2[0] = firstRow2[firstRow2.length-1];
+    firstRow2[firstRow2.length-1] = temp;
+
+    for(String[] i: names){
+      for (String j: i){
+        System.out.print("\t"+ j);
+
+      }
+      System.out.println("");
+    }
    
   }
 }
